@@ -125,3 +125,6 @@ And finally, we convert this number to hex using the following schema:
 
 A library is available to automate this process: **img2gb**
 
+# Background 
+
+![Conversion with binary](./res/imgs/background_layer_scrolling.gif)

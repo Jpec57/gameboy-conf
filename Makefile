@@ -7,9 +7,13 @@ NAME=main
 
 all: $(NAME)
 
-$(NAME):
-	$(LCC) -o game.gb $(SDIR)/$(SRC)
+build:
+	$(LCC) -I $(INCLUDE) -o game.gb $(SDIR)/$(SRC)
+open:
 	open game.gb
+
+$(NAME): build open
+
 clean: 
 	rm -rf $(NAME)
 
