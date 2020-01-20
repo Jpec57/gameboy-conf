@@ -1,0 +1,8 @@
+#ifndef _FIRST_MAP_TILEMAP_H
+#define _FIRST_MAP_TILEMAP_H
+
+extern const UINT8 FIRST_MAP[];
+#define FIRST_MAP_TILEMAP_WIDTH 20
+#define FIRST_MAP_TILEMAP_HEIGHT 18
+
+#endif
