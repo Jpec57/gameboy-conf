@@ -145,3 +145,58 @@ void move_bkg(UINT8 x, UINT8 y);
 
 **/!\ Warning: these coordinates are in pixels !**
 
+# Sprites 
+
+## General info 
+While the background and window layer are forced to use a grid, sprites can be positioned anywhere we like with pixel precision.
+
+They can be 8*8 long or 8*16 long.
+
+There are some restrictions while using sprites such as those:
+-  you cannot have more than 40 sprites at the screen at the same time and at most 10 on the same line.
+- you only have 3 different shades to color your sprite as one color is transparent to show the background.
+All of these information are registered in memory as OAM (Object Attribute Memory).
+
+## Memory loading
+
+While we were using 
+``` 
+set_bkg_data(0, 5, CHERRY_WALL);
+```
+Now we will be using:
+```
+void set_sprite_data(UINT8 first_tile, UINT8 nb_tiles, unsigned char *data);
+```
+These methods are actually doing the same thing but at different places in memory.
+
+As before, we can choose to display sprites or not with a simple switch:
+```
+SHOW_SPRITES;
+HIDE_SPRITES;
+```
+Finally, to show a sprite, we use:
+
+```
+void set_sprite_tile(UINT8 nb, UINT8 tile);
+```
+
+where *nb* is between 0 and 39 and is the unique id of our sprite marking at the same time its priority. 
+
+## Movement 
+
+In the same manner as seen before, we can move our sprite absolutely:
+```
+void move_sprite(UINT8 nb, UINT8 x, UINT8 y);
+```
+... or relatively...
+```
+void scroll_sprite(INT8 nb, INT8 x, INT8 y);
+```
+
+### Attributes
+
+There are also attributes specific to sprites that can be used to reduce memory consumption. For instance, we can easily change the pallet we use to color our sprite or spin it to give the impression of a new design or eventually change the sprite priority, but it will not be discussed here. More info are available here: 
+
+
+https://blog.flozz.fr/2019/02/05/developpement-gameboy-7-les-sprites/
+
