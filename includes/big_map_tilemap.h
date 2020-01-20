@@ -1,0 +1,8 @@
+#ifndef _BIG_MAP_TILEMAP_H
+#define _BIG_MAP_TILEMAP_H
+
+extern const UINT8 BIG_TILEMAP[];
+#define BIG_MAP_TILEMAP_WIDTH 32
+#define BIG_MAP_TILEMAP_HEIGHT 18
+
+#endif
