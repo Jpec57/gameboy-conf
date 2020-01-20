@@ -32,12 +32,23 @@ void set_big_background(){
     SHOW_BKG;
 }
 
+void set_too_big_background(){
+    set_bkg_data(0, CHERRY_WALL_TILESET_COUNT, CHERRY_WALL);
+    set_bkg_tiles(0, 0, 
+    TOO_BIG_MAP_TILEMAP_WIDTH,
+    TOO_BIG_MAP_TILEMAP_HEIGHT,
+    TOO_BIG_TILEMAP);
+    SHOW_BKG;
+}
+
 void main(void) {
     UINT8 keys;
     
     // set_background();
-    // set_created_background();
+    // set_created_background(); // gameboy
     set_big_background();
+    // set_too_big_background();
+
     while (1) {
         keys = joypad();
 

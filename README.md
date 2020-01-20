@@ -127,4 +127,21 @@ A library is available to automate this process: **img2gb**
 
 # Background 
 
+A scrollable domain of 32 * 32 tiles.
 ![Conversion with binary](./res/imgs/background_layer_scrolling.gif)
+
+There are two main methods useful when working with background.
+
+The first one is:
+```
+void scroll_bkg(INT8 x, INT8 y);
+```
+using relative position
+
+and the second one:
+```
+void move_bkg(UINT8 x, UINT8 y);
+```
+
+**/!\ Warning: these coordinates are in pixels !**
+
